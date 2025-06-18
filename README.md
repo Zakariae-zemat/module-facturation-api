@@ -144,15 +144,11 @@ src/main/java/com/example/billing/
 
 ---
 
-## ⏳ Temps estimé : 4 heures
-
-Code propre, testé, documenté, réalisé sans assistance chatGPT ou un outil AI.
-
----
-
 ## 📅 Réalisé par: 
 
 Conçu et réalisé par **Zemat** pour une mission backend Spring Boot.
+
+Code propre, testé, documenté, réalisé sans assistance chatGPT ou un outil AI.
 
 ---
 
