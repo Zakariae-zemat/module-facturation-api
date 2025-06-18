@@ -9,6 +9,10 @@ import com.arimayi.facturation.services.ClientService;
 
 import java.util.List;
 
+/**
+ * Contrôleur REST pour la gestion des clients.
+ * Expose les endpoints API pour les opérations sur les clients.
+ */
 @RestController
 @RequestMapping("/clients")
 public class ClientController {
@@ -19,11 +23,15 @@ public class ClientController {
         this.clientService = clientService;
     }
 
+    //Récupère tous les clients enregistrés.
+     
     @GetMapping
     public List<Client> getAllClients() {
         return clientService.getAllClients();
     }
 
+    //Récupère un client spécifique par son identifiant.
+    
     @GetMapping("/{id}")
     public ResponseEntity<Client> getClientById(@PathVariable Long id) {
         return clientService.getClientById(id)
@@ -31,8 +39,11 @@ public class ClientController {
                 .orElse(ResponseEntity.notFound().build());
     }
 
+    //Crée un nouveau client.
+     
     @PostMapping
     public ResponseEntity<Client> createClient(@Valid @RequestBody Client client) {
+        // DÉLÉGATION : Le service gère la création et les validations
         Client created = clientService.createClient(client);
         return ResponseEntity.ok(created);
     }
